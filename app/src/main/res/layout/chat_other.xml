@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/chat_other_userpic"
+        android:src="@drawable/face_black"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="30dip"
+        app:riv_border_width="1dip"
+        app:riv_border_color="#333333"
+        app:riv_mutate_background="true"
+        app:riv_oval="true"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:id="@+id/other_text_layout"
+        android:background="@drawable/other_bg"
+        android:layout_marginLeft="4dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/chat_other_userpic"
+        android:layout_toRightOf="@+id/chat_other_userpic">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Yup! Still got it. Excellent condition."
+            android:id="@+id/chat_other_text"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/primary_material_dark"
+            />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="May 6, 18:41"
+        android:textSize="12sp"
+        android:layout_marginLeft="6dp"
+        android:id="@+id/chat_other_timestamp"
+        android:layout_below="@+id/other_text_layout"
+        android:layout_alignStart="@+id/other_text_layout"
+        android:layout_alignLeft="@+id/other_text_layout" />
+
+
+</RelativeLayout>

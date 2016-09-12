@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".sign_in.CreateAccountActivity">
+
+    <RelativeLayout
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/userImageLayoutID">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/userImageID"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:onClick="uploadImage"
+            android:background="@color/orange"
+            android:scaleType="centerCrop" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userImageLayoutID"
+        android:id="@+id/createAccountLayoutID"
+        android:orientation="horizontal">
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1">
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/firstNameInputID"
+                    android:inputType="textPersonName"
+                    android:layout_column="0"
+                    android:hint="@string/firstName_hint"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lastNameInputID"
+                    android:inputType="textPersonName"
+                    android:hint="@string/lastName_hint"
+                    android:layout_column="1" />
+            </TableRow>
+        </TableLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/createAccountEmailInputID"
+            android:inputType="textEmailAddress"
+            android:hint="@string/signIn_email_hint"
+            android:layout_below="@id/tableLayout1"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/createAccountPasswordInputID"
+            android:hint="@string/signIn_password_hint"
+            android:layout_below="@id/createAccountEmailInputID"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/createAccountNicknameInputID"
+            android:hint="@string/Nickname_hint"
+            android:layout_below="@id/createAccountPasswordInputID"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:inputType="textMultiLine"
+                android:id="@+id/createAccountDescInputID"
+                android:gravity="start"
+                android:background="@drawable/edit_bg"
+                android:singleLine="true"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/createAccountNicknameInputID"
+                android:hint="@string/yourselfDesc_hint"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/createAccountLayoutID">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/createAccountNextBtnID"
+            android:layout_alignParentBottom="true"
+            android:onClick="registerUserDetails"
+            android:drawableRight="@drawable/ic_chevron_right_black_24dp_1x"
+            android:text="@string/createAccount_nextBtn"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

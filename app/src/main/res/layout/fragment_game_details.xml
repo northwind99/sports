@@ -1,0 +1,227 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/gameDetailsFragmentID"
+    android:background="@color/white"
+    tools:context=".main.gameDetails.GameDetailsFragment"
+    android:layout_marginBottom="50dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="48dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gameDetailsNameLocationLayoutID">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="@string/hello_blank_fragment"
+                android:id="@+id/gameDetailsNameLocationID" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="183dp"
+                android:id="@+id/gameDetailsSportImageID"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/gameDetailsNameLocationLayoutID"
+                android:layout_gravity="center"
+                android:src="@drawable/basketball_image"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="New Text"
+                android:id="@+id/gameDetailsDescID"
+                android:layout_below="@id/gameDetailsSportImageID"
+                android:layout_gravity="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/gameDetailsLinearLayoutID"
+                android:divider="@drawable/my_divider"
+                android:showDividers="middle"
+                android:weightSum="1"
+                android:layout_below="@id/gameDetailsDescID"
+                android:layout_marginTop="20dp"
+                android:layout_weight="4.30">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info_window_game_date_time"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/gameDetailsGameTimeID"
+                        android:text="time"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info_window_game_cost" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/gameDetailsGameCostID"
+                        android:text="cost"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info_window_attending"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/gameDetailsGamePlayersID"
+                        android:text="15 Players"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info_window_gender"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/gameDetailsGameGenderID"
+                        android:text="Male"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <com.google.android.gms.maps.MapView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/gameDetailsMapID"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="0.48"
+                android:layout_below="@id/gameDetailsLinearLayoutID"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gameDetailsAddressID"
+                android:textSize="18sp"
+                android:layout_below="@id/gameDetailsMapID"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gameDetailsTotalConfirmedID"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/gameDetailsAddressID"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gameDetailsConfirmedTitleID"
+                android:text="@string/confirmed_players"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/gameDetailsAddressID"
+                android:layout_toRightOf="@id/gameDetailsTotalConfirmedID"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/gameDetailsConfirmedImageID"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/light_gray"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/gameDetailsConfirmedTitleID"
+                android:clickable="true"/>
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBarConfirmedID"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_below="@id/gameDetailsConfirmedTitleID"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gameDetailsTotalWaitingPlayersID"
+                android:layout_below="@id/gameDetailsConfirmedImageID"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gameDetailsWaitingListTitleID"
+                android:text="Waiting Players"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/gameDetailsConfirmedImageID"
+                android:layout_toRightOf="@id/gameDetailsTotalWaitingPlayersID"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/gameDetailsWaitingListMemberImageID"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/light_gray"
+                android:layout_below="@id/gameDetailsWaitingListTitleID"
+                android:clickable="true"/>
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBarWaitingID"
+                android:layout_gravity="center"
+                android:layout_below="@id/gameDetailsWaitingListTitleID"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>

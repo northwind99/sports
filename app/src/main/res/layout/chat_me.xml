@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/chat_me_userpic"
+        android:src="@drawable/face_black"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="30dip"
+        app:riv_border_width="1dip"
+        app:riv_border_color="#333333"
+        app:riv_mutate_background="true"
+        app:riv_oval="true"/>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:id="@+id/text_layout"
+        android:layout_toStartOf="@+id/chat_me_userpic"
+        android:layout_toLeftOf="@+id/chat_me_userpic"
+        android:background="@drawable/me_bg"
+        android:layout_marginRight="4dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Hey Steve! Hope everything is well! Are you still selling that motorcycle?"
+            android:id="@+id/chat_me_text"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/primary_material_dark"
+            />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="May 6, 18:41"
+        android:textSize="12sp"
+        android:layout_marginRight="6dp"
+        android:id="@+id/chat_me_timestamp"
+        android:layout_below="@+id/text_layout"
+        android:layout_alignEnd="@+id/text_layout"
+        android:layout_alignRight="@+id/text_layout" />
+
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:id="@+id/notification_itemLayout">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/notification_itemImage"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/face_black"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="30dip"
+            app:riv_border_width="1dip"
+            app:riv_border_color="#333333"
+            app:riv_mutate_background="true"
+            app:riv_oval="true"
+            />
+
+        <TextView
+            android:id="@+id/notification_itemText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/notification_itemImage"
+            android:layout_alignBaseline="@+id/notification_itemImage"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="hello everyone"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="May 6, 18:41"
+            android:layout_marginLeft="8dp"
+            android:textSize="12sp"
+            android:id="@+id/notification_timestamp"
+            android:layout_below="@+id/notification_itemText"
+            android:layout_toRightOf="@+id/notification_itemImage" />
+        
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/notification_itemLayout"
+        android:layout_alignLeft="@id/notification_itemLayout"/>
+
+</RelativeLayout>

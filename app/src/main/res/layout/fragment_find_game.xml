@@ -1,0 +1,24 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/findGameFragmentID"
+    tools:context=".main.findGames.FindGameFragment">
+
+    <com.aliasapps.sports.utils.MapWrapperLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map_relative_layoutID"
+        android:layout_marginBottom="48dp">
+
+        <fragment
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:id="@+id/mapViewID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            class="com.google.android.gms.maps.MapFragment"/>
+
+    </com.aliasapps.sports.utils.MapWrapperLayout>
+
+</FrameLayout>

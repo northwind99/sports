@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".main.findGames.CreateGameActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollViewContainerID"
+        android:layout_marginBottom="50dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/createGameEventID"
+                android:hint="@string/create_game_event"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/createGameCostID"
+                android:inputType="numberDecimal"
+                android:hint="@string/create_game_cost"
+                android:layout_below="@id/createGameEventID"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/createGameSelectSportID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/createGameCostID"
+                android:layout_marginTop="20dp"
+                android:clickable="true"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setGameTimeID"
+                android:layout_below="@id/createGameSelectSportID"
+                android:text="@string/create_game_time_set"
+                android:gravity = "center"
+                android:background="@color/orange"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:padding="20dp"/>
+
+
+               <RadioGroup
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/radioGroupID"
+                   android:layout_marginTop="20dp"
+                   android:layout_below="@id/setGameTimeID"
+                   android:orientation='horizontal'
+                   android:gravity="center">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/createGameMaleID"
+                    android:layout_alignParentLeft="true"
+                    android:drawableLeft="@drawable/gender_male"
+                    android:textAllCaps="false"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/create_game_Male"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/createGameFemaleID"
+                    android:layout_centerInParent="true"
+                    android:textAllCaps="false"
+                    android:layout_marginRight="10dp"
+                    android:drawableLeft="@drawable/gender_female"
+                    android:text="@string/create_game_Female"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/createGameCoedID"
+                    android:textAllCaps="false"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/create_game_Coed"
+                    android:drawableLeft="@drawable/gender_coed" />
+                    </RadioGroup>
+
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="0,1"
+                android:id="@+id/tableLayout2"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/radioGroupID">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/maxPlayerID"
+                        android:inputType="number"
+                        android:layout_column="0"
+                        android:hint="@string/max_players"/>
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/minPlayerID"
+                        android:inputType="number"
+                        android:hint="@string/min_players"
+                        android:layout_column="1" />
+                </TableRow>
+            </TableLayout>
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:id="@+id/createGameDescID"
+                        android:layout_marginTop="20dp"
+                        android:layout_below="@id/tableLayout2"
+                        android:gravity="start"
+                        android:inputType="textMultiLine"
+                        android:background="@drawable/edit_bg"
+                        android:singleLine="true"/>
+
+                   <EditText
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/createGameAddressID"
+                       android:layout_below="@id/createGameDescID"
+                       android:layout_marginTop="20dp"
+                       android:hint="@string/create_game_Location"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/gameMapAddressTitleID"
+                        android:layout_below="@id/createGameAddressID"
+                        android:text="@string/create_game_map_address_title"
+                        android:layout_marginTop="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/gameMapAddressID"
+                        android:layout_toRightOf="@id/gameMapAddressTitleID"
+                        android:layout_below="@id/createGameAddressID"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"/>
+
+                     <com.aliasapps.sports.utils.CustomMapView
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/createGameMapViewID"
+                        android:layout_below="@id/gameMapAddressID"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp" />
+
+     </RelativeLayout>
+    </ScrollView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+
+                <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/createGameFinishedBtnID"
+                android:layout_alignParentBottom="true"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp_1x"
+                android:textAllCaps="false"
+                android:onClick="attemptCreateGame"
+                android:text="@string/create_game_start_event"/>
+
+        </RelativeLayout>
+</RelativeLayout>
